@@ -1,0 +1,6 @@
+@EMR.Lab.API_HostAddress = http://localhost:5021
+
+GET {{EMR.Lab.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
