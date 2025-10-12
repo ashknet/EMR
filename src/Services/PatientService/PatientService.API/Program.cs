@@ -5,19 +5,15 @@ using PatientService.Infrastructure.Repositories;
 using PatientService.Domain.Entities;
 using Shared.Common.Interfaces;
 using Shared.Security.Authentication;
-using Serilog;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.WithProperty("ServiceName", "PatientService")
-    .WriteTo.Console()
-    .CreateLogger();
-
-builder.Host.UseSerilog();
+// Configure Logging with Microsoft.Extensions.Logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 // Add services to the container
 builder.Services.AddControllers();
@@ -146,8 +142,9 @@ app.MapControllers();
 app.MapHealthChecks("/health");
 
 // Log startup
-Log.Information("Patient Service API starting up...");
-Log.Information($"Environment: {app.Environment.EnvironmentName}");
-Log.Information($"Authentication: {(isDevelopment ? "Disabled (Development)" : "Enabled (Production)")}");
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Patient Service API starting up...");
+logger.LogInformation($"Environment: {app.Environment.EnvironmentName}");
+logger.LogInformation($"Authentication: {(isDevelopment ? "Disabled (Development)" : "Enabled (Production)")}");
 
 app.Run();

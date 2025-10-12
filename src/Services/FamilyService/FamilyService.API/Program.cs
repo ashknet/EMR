@@ -5,19 +5,15 @@ using FamilyService.Infrastructure.Repositories;
 using FamilyService.Domain.Entities;
 using Shared.Common.Interfaces;
 using Shared.Security.Authentication;
-using Serilog;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.WithProperty("ServiceName", "FamilyService")
-    .WriteTo.Console()
-    .CreateLogger();
-
-builder.Host.UseSerilog();
+// Configure Logging with Microsoft.Extensions.Logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 
@@ -127,8 +123,9 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHealthChecks("/health");
 
-Log.Information("Family Service API starting up...");
-Log.Information($"Environment: {app.Environment.EnvironmentName}");
-Log.Information($"Authentication: {(isDevelopment ? "Disabled (Development)" : "Enabled (Production)")}");
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Family Service API starting up...");
+logger.LogInformation($"Environment: {app.Environment.EnvironmentName}");
+logger.LogInformation($"Authentication: {(isDevelopment ? "Disabled (Development)" : "Enabled (Production)")}");
 
 app.Run();

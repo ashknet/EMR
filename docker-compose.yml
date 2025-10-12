@@ -97,6 +97,81 @@ services:
     networks:
       - healthcare-network
 
+  # Data Integration Service API
+  dataintegration-api:
+    build:
+      context: ./src/Services/DataIntegrationService/DataIntegrationService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-dataintegration-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5006:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Agent Management Service API
+  agentmanagement-api:
+    build:
+      context: ./src/Services/AgentManagementService/AgentManagementService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-agentmanagement-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5007:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Transfer/Routing Service API
+  transfer-api:
+    build:
+      context: ./src/Services/TransferRoutingService/TransferRoutingService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-transfer-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5008:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Notification Service API
+  notification-api:
+    build:
+      context: ./src/Services/NotificationService/NotificationService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-notification-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5009:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Security/Compliance Service API
+  security-api:
+    build:
+      context: ./src/Services/SecurityComplianceService/SecurityComplianceService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-security-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5010:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
   # React Frontend
   patient-portal:
     build:

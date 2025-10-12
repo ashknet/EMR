@@ -2,17 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using HealthHistoryService.Infrastructure.Data;
 using Shared.Security.Authentication;
-using Serilog;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.WithProperty("ServiceName", "HealthHistoryService")
-    .WriteTo.Console()
-    .CreateLogger();
-
-builder.Host.UseSerilog();
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 builder.Services.AddControllers();
 
@@ -68,5 +64,6 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHealthChecks("/health");
 
-Log.Information("Health History Service API starting up...");
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Health History Service API starting up...");
 app.Run();
