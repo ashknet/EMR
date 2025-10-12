@@ -1,0 +1,128 @@
+version: '3.8'
+
+services:
+  # SQL Server Database
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: healthcare-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - healthcare-network
+
+  # Patient Service API
+  patient-api:
+    build:
+      context: ./src/Services/PatientService/PatientService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-patient-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=HealthcarePlatform_Patient;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+      - EncryptionKey=DefaultKeyForDevelopmentOnly123456
+    ports:
+      - "5001:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Family Service API
+  family-api:
+    build:
+      context: ./src/Services/FamilyService/FamilyService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-family-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=HealthcarePlatform_Family;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    ports:
+      - "5002:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Health History Service API
+  healthhistory-api:
+    build:
+      context: ./src/Services/HealthHistoryService/HealthHistoryService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-healthhistory-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=HealthcarePlatform_HealthHistory;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    ports:
+      - "5003:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Insurance Service API
+  insurance-api:
+    build:
+      context: ./src/Services/InsuranceService/InsuranceService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-insurance-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=HealthcarePlatform_Insurance;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    ports:
+      - "5004:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # Consent/Audit Service API
+  consent-api:
+    build:
+      context: ./src/Services/ConsentAuditService/ConsentAuditService.API
+      dockerfile: Dockerfile
+    container_name: healthcare-consent-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=HealthcarePlatform_Consent;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    ports:
+      - "5005:80"
+    depends_on:
+      - sqlserver
+    networks:
+      - healthcare-network
+
+  # React Frontend
+  patient-portal:
+    build:
+      context: ./src/Frontend/PatientPortal
+      dockerfile: Dockerfile
+    container_name: healthcare-patient-portal
+    environment:
+      - REACT_APP_PATIENT_API_URL=http://localhost:5001
+      - REACT_APP_FAMILY_API_URL=http://localhost:5002
+      - REACT_APP_HEALTHHISTORY_API_URL=http://localhost:5003
+      - REACT_APP_INSURANCE_API_URL=http://localhost:5004
+      - REACT_APP_CONSENT_API_URL=http://localhost:5005
+    ports:
+      - "3000:80"
+    depends_on:
+      - patient-api
+      - family-api
+      - healthhistory-api
+      - insurance-api
+      - consent-api
+    networks:
+      - healthcare-network
+
+networks:
+  healthcare-network:
+    driver: bridge
+
+volumes:
+  sqlserver-data:
