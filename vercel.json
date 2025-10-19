@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "cd PatientPortal && npm install && npm run build",
   "outputDirectory": "PatientPortal/dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "devCommand": "cd PatientPortal && npm run dev",
+  "installCommand": "cd PatientPortal && npm install",
   "framework": "vite",
   "rewrites": [
     {
