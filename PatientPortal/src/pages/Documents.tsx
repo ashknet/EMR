@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// useState and useEffect imports removed as they're not used in this placeholder component
 
 // Note: This is a placeholder. Documents API endpoint needs to be implemented in the backend.
 // For now, showing a message that documents feature is coming soon.

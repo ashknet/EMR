@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import apiClient from '../config/apiConfig';
+// apiClient import removed as it's not used
 import { API_BASE_URL } from '../config/apiConfig';
 import { MOCK_PATIENT_ID } from '../config/mockUser';
 import axios from 'axios';
@@ -188,7 +188,7 @@ export default function Dashboard() {
 
   // Icon mapping for quick actions
   const getIconForAction = (iconName: string) => {
-    const icons: Record<string, JSX.Element> = {
+    const icons: Record<string, React.ReactElement> = {
       medical: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

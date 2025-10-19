@@ -1,4 +1,4 @@
-import React from 'react';
+// React import not needed in React 19 with new JSX transform
 import { createRoot } from 'react-dom/client';
 import { MsalProvider } from '@azure/msal-react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';

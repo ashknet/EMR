@@ -27,13 +27,18 @@ const deleteMetadata = async (table: string, id: number) => {
 export const AdminMetadata: React.FC = () => {
   const [table, setTable] = useState('gender');
   const qc = useQueryClient();
-  const { data, isLoading, error } = useQuery(['metadata-admin', table], () => fetchMetadata(table));
-
-  const saveMutation = useMutation((item: MetadataItem) => upsertMetadata(table, item), {
-    onSuccess: () => qc.invalidateQueries(['metadata-admin', table]),
+  const { data, isLoading, error } = useQuery<MetadataItem[]>({
+    queryKey: ['metadata-admin', table],
+    queryFn: () => fetchMetadata(table),
   });
-  const delMutation = useMutation((id: number) => deleteMetadata(table, id), {
-    onSuccess: () => qc.invalidateQueries(['metadata-admin', table]),
+
+  const saveMutation = useMutation({
+    mutationFn: (item: MetadataItem) => upsertMetadata(table, item),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['metadata-admin', table] }),
+  });
+  const delMutation = useMutation({
+    mutationFn: (id: number) => deleteMetadata(table, id),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ['metadata-admin', table] }),
   });
 
   const [newName, setNewName] = useState('');

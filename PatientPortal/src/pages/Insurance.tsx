@@ -35,8 +35,7 @@ export default function Insurance() {
   const [insurances, setInsurances] = useState<InsurancePolicy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
+  // isEditing and editingId removed as they're not used
   const [message, setMessage] = useState('');
   const [showAddForm, setShowAddForm] = useState(false);
 
@@ -104,25 +103,7 @@ export default function Insurance() {
     }
   };
 
-  const handleUpdate = async (insuranceId: string, updates: Partial<InsurancePolicy>) => {
-    try {
-      setIsSaving(true);
-      setMessage('');
-
-      await axios.put(`${API_BASE_URL}/insurance/${insuranceId}`, updates);
-      
-      setMessage('✓ Insurance policy updated successfully');
-      setEditingId(null);
-      await loadInsurances();
-      
-      setTimeout(() => setMessage(''), 3000);
-    } catch (error: any) {
-      console.error('Error updating insurance:', error);
-      setMessage(`✗ Error updating insurance: ${error.response?.data?.message || error.message}`);
-    } finally {
-      setIsSaving(false);
-    }
-  };
+  // handleUpdate function removed as it's not used
 
   const handleDelete = async (insuranceId: string) => {
     if (!confirm('Are you sure you want to delete this insurance policy?')) {

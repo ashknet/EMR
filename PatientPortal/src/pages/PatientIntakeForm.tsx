@@ -12,9 +12,7 @@ const useMetadata = (table: string) =>
 
 export const PatientIntakeForm: React.FC = () => {
   const { data: genders } = useMetadata('gender');
-  const { data: maritalStatuses } = useMetadata('maritalstatus');
-  const { data: races } = useMetadata('race');
-  const { data: languages } = useMetadata('language');
+  // maritalStatuses, races, and languages removed as they're not used in this form
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
