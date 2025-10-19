@@ -1,0 +1,5 @@
+{
+  "PatientService.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Ashok\\My Projects\\EMRR\\PatientService\\PatientService.API",
+  "PatientService.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Ashok\\My Projects\\EMRR\\PatientService\\PatientService.Domain",
+  "PatientService.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Ashok\\My Projects\\EMRR\\PatientService\\PatientService.Infrastructure"
+}

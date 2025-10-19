@@ -1,0 +1,12 @@
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\bin\Debug\net8.0\PatientService.Domain.deps.json
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\bin\Debug\net8.0\PatientService.Domain.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\bin\Debug\net8.0\PatientService.Domain.pdb
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.csproj.AssemblyReference.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.AssemblyInfoInputs.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.AssemblyInfo.cs
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.csproj.CoreCompileInputs.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\refint\PatientService.Domain.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.pdb
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\ref\PatientService.Domain.dll

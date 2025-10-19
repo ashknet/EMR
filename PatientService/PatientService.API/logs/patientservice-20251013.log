@@ -1,0 +1,86 @@
+2025-10-13 18:00:17.803 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-13 18:16:23.685 -05:00 [WRN] No store type was specified for the decimal property 'EstimatedCost' on entity type 'Encounter'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:16:23.692 -05:00 [WRN] No store type was specified for the decimal property 'CoinsurancePercentage' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:16:23.695 -05:00 [WRN] No store type was specified for the decimal property 'Copay' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:16:24.265 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-10-13 18:17:55.073 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:12.833 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:14.799 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:28.533 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:28.554 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:38.357 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:18:38.370 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:22:39.592 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:22:39.610 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:22:48.871 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:22:48.887 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:23:42.857 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:23:42.865 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:23:59.358 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:23:59.376 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:24:10.379 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:24:10.388 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:27:48.675 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:27:48.698 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:28:47.816 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:29:45.796 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:30:29.797 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:30:30.794 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:30:50.675 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:30:50.684 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:30:50.692 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:11.809 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:24.805 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:27.808 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:46.709 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:46.719 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:33:46.727 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:02.072 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:02.081 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:02.089 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:11.375 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:11.375 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:27.077 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:27.078 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:34:30.364 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:35:31.559 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-13 18:35:45.760 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-13 18:35:48.352 -05:00 [WRN] No store type was specified for the decimal property 'EstimatedCost' on entity type 'Encounter'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:35:48.359 -05:00 [WRN] No store type was specified for the decimal property 'CoinsurancePercentage' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:35:48.361 -05:00 [WRN] No store type was specified for the decimal property 'Copay' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:35:48.780 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-10-13 18:35:49.428 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:35:49.517 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:37:44.998 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:37:45.044 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:37:51.864 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:38:00.902 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:38:00.913 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:38:03.836 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:38:58.282 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:38:58.295 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:48:59.355 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-13 18:51:02.017 -05:00 [WRN] No store type was specified for the decimal property 'EstimatedCost' on entity type 'Encounter'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:51:02.024 -05:00 [WRN] No store type was specified for the decimal property 'CoinsurancePercentage' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:51:02.026 -05:00 [WRN] No store type was specified for the decimal property 'Copay' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-13 18:51:02.439 -05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-10-13 18:51:03.005 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:51:03.057 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:57:51.342 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:57:51.359 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:58:16.436 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:58:16.452 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:59:44.493 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 18:59:44.509 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:25:30.595 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:25:30.610 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:26:12.507 -05:00 [INF] Updated patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:26:12.586 -05:00 [INF] Added allergy "7caf99f3-024a-4096-a6ef-a1567fab568b" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:26:12.629 -05:00 [INF] Added allergy "1828dcc0-94de-44e8-9d6c-c852ca058f0d" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:26:12.725 -05:00 [INF] Added insurance "03e6a23d-2197-4569-9e10-9076d25217a9" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:27:06.203 -05:00 [INF] Updated patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:27:06.218 -05:00 [INF] Added allergy "79f06cd8-c966-4794-92d6-941c78790953" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:27:06.231 -05:00 [INF] Added allergy "176aaf54-e446-4598-8932-45e944b09bdd" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:27:06.248 -05:00 [INF] Added insurance "e81e2980-c159-435a-949d-9dd89d0b4096" for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:28:20.886 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"
+2025-10-13 19:28:20.904 -05:00 [INF] Dashboard loaded for patient "3e35157e-ec48-4e9a-9456-23961eea2de0"

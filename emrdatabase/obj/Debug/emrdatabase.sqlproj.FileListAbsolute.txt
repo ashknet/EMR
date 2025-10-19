@@ -1,0 +1,10 @@
+C:\Ashok\My Projects\EMRR\emrdatabase\bin\Debug\emrdatabase.dacpac
+C:\Ashok\My Projects\EMRR\emrdatabase\bin\Debug\emrdatabase.dll
+C:\Ashok\My Projects\EMRR\emrdatabase\bin\Debug\emrdatabase.pdb
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\emrdatabase.sqlproj.AssemblyReference.cache
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\emrdatabase.dll
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\emrdatabase.pdb
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\Model.xml
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\refactor.xml
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\postdeploy.sql
+C:\Ashok\My Projects\EMRR\emrdatabase\obj\Debug\predeploy.sql

@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientService.API", "PatientService\PatientService.API\PatientService.API.csproj", "{19F1F898-E81B-835A-114B-BB4EA3726368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientService.Domain", "PatientService\PatientService.Domain\PatientService.Domain.csproj", "{664098D5-FC34-54FE-4AA0-73603235075D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientService.Infrastructure", "PatientService\PatientService.Infrastructure\PatientService.Infrastructure.csproj", "{8221215F-50C2-0316-D0FE-187086D4CCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientService.Tests", "PatientService\PatientService.Tests\PatientService.Tests.csproj", "{37AA7575-0A9B-29F0-ABA7-F66A1AAA86DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalAgent", "HospitalAgent\HospitalAgent.csproj", "{9737DEDF-7A74-9CFA-48D8-DAB51CAFD407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalAgentService.API", "HospitalAgentService\HospitalAgentService.API\HospitalAgentService.API.csproj", "{E1153281-FCFB-4354-6834-1901B166036B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "emrdatabase", "emrdatabase\emrdatabase.sqlproj", "{EC5018B5-7589-4AEA-AC92-B6DBD008B486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19F1F898-E81B-835A-114B-BB4EA3726368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F1F898-E81B-835A-114B-BB4EA3726368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F1F898-E81B-835A-114B-BB4EA3726368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F1F898-E81B-835A-114B-BB4EA3726368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664098D5-FC34-54FE-4AA0-73603235075D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664098D5-FC34-54FE-4AA0-73603235075D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664098D5-FC34-54FE-4AA0-73603235075D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664098D5-FC34-54FE-4AA0-73603235075D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8221215F-50C2-0316-D0FE-187086D4CCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8221215F-50C2-0316-D0FE-187086D4CCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8221215F-50C2-0316-D0FE-187086D4CCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8221215F-50C2-0316-D0FE-187086D4CCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AA7575-0A9B-29F0-ABA7-F66A1AAA86DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AA7575-0A9B-29F0-ABA7-F66A1AAA86DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AA7575-0A9B-29F0-ABA7-F66A1AAA86DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AA7575-0A9B-29F0-ABA7-F66A1AAA86DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9737DEDF-7A74-9CFA-48D8-DAB51CAFD407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9737DEDF-7A74-9CFA-48D8-DAB51CAFD407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9737DEDF-7A74-9CFA-48D8-DAB51CAFD407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9737DEDF-7A74-9CFA-48D8-DAB51CAFD407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1153281-FCFB-4354-6834-1901B166036B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1153281-FCFB-4354-6834-1901B166036B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1153281-FCFB-4354-6834-1901B166036B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1153281-FCFB-4354-6834-1901B166036B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5018B5-7589-4AEA-AC92-B6DBD008B486}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B16156E-57E9-4084-B2D2-B58108678629}
+	EndGlobalSection
+EndGlobal

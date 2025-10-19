@@ -1,0 +1,17 @@
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Infrastructure.deps.json
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Infrastructure.runtimeconfig.json
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Infrastructure.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Infrastructure.pdb
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Domain.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\bin\Debug\net8.0\PatientService.Domain.pdb
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.csproj.AssemblyReference.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.AssemblyInfoInputs.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.AssemblyInfo.cs
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientS.98EE1375.Up2Date
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\refint\PatientService.Infrastructure.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.pdb
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\PatientService.Infrastructure.genruntimeconfig.cache
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Infrastructure\obj\Debug\net8.0\ref\PatientService.Infrastructure.dll

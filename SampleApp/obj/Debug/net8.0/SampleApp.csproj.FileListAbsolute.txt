@@ -1,0 +1,14 @@
+C:\Ashok\My Projects\EMRR\SampleApp\bin\Debug\net8.0\SampleApp.exe
+C:\Ashok\My Projects\EMRR\SampleApp\bin\Debug\net8.0\SampleApp.deps.json
+C:\Ashok\My Projects\EMRR\SampleApp\bin\Debug\net8.0\SampleApp.runtimeconfig.json
+C:\Ashok\My Projects\EMRR\SampleApp\bin\Debug\net8.0\SampleApp.dll
+C:\Ashok\My Projects\EMRR\SampleApp\bin\Debug\net8.0\SampleApp.pdb
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.AssemblyInfoInputs.cache
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.AssemblyInfo.cs
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.csproj.CoreCompileInputs.cache
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.dll
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\refint\SampleApp.dll
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.pdb
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\SampleApp.genruntimeconfig.cache
+C:\Ashok\My Projects\EMRR\SampleApp\obj\Debug\net8.0\ref\SampleApp.dll

@@ -1,0 +1,2549 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Patient Service API",
+    "description": "HIPAA-compliant patient management microservice with FHIR R4 support",
+    "contact": {
+      "name": "Healthcare Platform Team",
+      "email": "support@healthcare-platform.com"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Allergies/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Allergies"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AllergyDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Allergies": {
+      "post": {
+        "tags": [
+          "Allergies"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAllergyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAllergyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAllergyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllergyDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Allergies/{allergyId}/fhir": {
+      "get": {
+        "tags": [
+          "Allergies"
+        ],
+        "parameters": [
+          {
+            "name": "allergyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Allergies/{allergyId}": {
+      "put": {
+        "tags": [
+          "Allergies"
+        ],
+        "parameters": [
+          {
+            "name": "allergyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAllergyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAllergyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAllergyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Allergies"
+        ],
+        "parameters": [
+          {
+            "name": "allergyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/Consent/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsentDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Consent": {
+      "post": {
+        "tags": [
+          "Consent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Consent/{consentId}": {
+      "get": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "consentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Consent/token/{token}": {
+      "get": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Client Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Consent/{consentId}/revoke": {
+      "post": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "consentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeConsentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeConsentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeConsentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Consent/{consentId}/audit": {
+      "get": {
+        "tags": [
+          "Consent"
+        ],
+        "parameters": [
+          {
+            "name": "consentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsentAuditDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Dashboard/{patientId}": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Family/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Family"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FamilyMemberDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Family": {
+      "post": {
+        "tags": [
+          "Family"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFamilyRelationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFamilyRelationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFamilyRelationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FamilyMemberDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Family/{relationId}": {
+      "put": {
+        "tags": [
+          "Family"
+        ],
+        "parameters": [
+          {
+            "name": "relationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFamilyRelationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFamilyRelationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFamilyRelationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Family"
+        ],
+        "parameters": [
+          {
+            "name": "relationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Insurance/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Insurance"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InsuranceDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Insurance/{insuranceId}": {
+      "get": {
+        "tags": [
+          "Insurance"
+        ],
+        "parameters": [
+          {
+            "name": "insuranceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Insurance"
+        ],
+        "parameters": [
+          {
+            "name": "insuranceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInsuranceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInsuranceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInsuranceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Insurance"
+        ],
+        "parameters": [
+          {
+            "name": "insuranceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/Insurance": {
+      "post": {
+        "tags": [
+          "Insurance"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInsuranceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInsuranceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInsuranceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Patients/{id}": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatientDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatientDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Patients": {
+      "post": {
+        "tags": [
+          "Patients"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatientDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transfers/patient/{patientId}": {
+      "get": {
+        "tags": [
+          "Transfers"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransferDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transfers": {
+      "post": {
+        "tags": [
+          "Transfers"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transfers/{transferId}": {
+      "get": {
+        "tags": [
+          "Transfers"
+        ],
+        "parameters": [
+          {
+            "name": "transferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transfers/{transferId}/generate-bundle": {
+      "post": {
+        "tags": [
+          "Transfers"
+        ],
+        "parameters": [
+          {
+            "name": "transferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transfers/{transferId}/status": {
+      "patch": {
+        "tags": [
+          "Transfers"
+        ],
+        "parameters": [
+          {
+            "name": "transferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransferStatusRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransferStatusRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransferStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Transfers/{transferId}/audit": {
+      "get": {
+        "tags": [
+          "Transfers"
+        ],
+        "parameters": [
+          {
+            "name": "transferId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransferAuditDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AllergyDto": {
+        "type": "object",
+        "properties": {
+          "allergyId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "allergenName": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergenType": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          },
+          "clinicalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "reaction": {
+            "type": "string",
+            "nullable": true
+          },
+          "onsetDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsentAuditDto": {
+        "type": "object",
+        "properties": {
+          "auditId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action": {
+            "type": "string",
+            "nullable": true
+          },
+          "actionDetails": {
+            "type": "string",
+            "nullable": true
+          },
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "actorRole": {
+            "type": "string",
+            "nullable": true
+          },
+          "ipAddress": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsentDto": {
+        "type": "object",
+        "properties": {
+          "consentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientOrganization": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientType": {
+            "type": "string",
+            "nullable": true
+          },
+          "grantedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowDemographics": {
+            "type": "boolean"
+          },
+          "allowAllergies": {
+            "type": "boolean"
+          },
+          "allowConditions": {
+            "type": "boolean"
+          },
+          "allowImmunizations": {
+            "type": "boolean"
+          },
+          "allowMedications": {
+            "type": "boolean"
+          },
+          "allowInsurance": {
+            "type": "boolean"
+          },
+          "allowDocuments": {
+            "type": "boolean"
+          },
+          "allowEncounters": {
+            "type": "boolean"
+          },
+          "shareToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "accessCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxAccessCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAllergyRequest": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "allergenName": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergenType": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergenCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "codeSystem": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          },
+          "clinicalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "reaction": {
+            "type": "string",
+            "nullable": true
+          },
+          "onsetDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "reportedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateConsentRequest": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "scope": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowDemographics": {
+            "type": "boolean"
+          },
+          "allowAllergies": {
+            "type": "boolean"
+          },
+          "allowConditions": {
+            "type": "boolean"
+          },
+          "allowImmunizations": {
+            "type": "boolean"
+          },
+          "allowMedications": {
+            "type": "boolean"
+          },
+          "allowInsurance": {
+            "type": "boolean"
+          },
+          "allowDocuments": {
+            "type": "boolean"
+          },
+          "allowEncounters": {
+            "type": "boolean"
+          },
+          "recipientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientOrganization": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientType": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "purpose": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalBasis": {
+            "type": "string",
+            "nullable": true
+          },
+          "signatureObtained": {
+            "type": "boolean"
+          },
+          "generateShareToken": {
+            "type": "boolean"
+          },
+          "tokenExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "maxAccessCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateFamilyRelationRequest": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "relatedPatientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "relationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "isGuardian": {
+            "type": "boolean"
+          },
+          "isProxy": {
+            "type": "boolean"
+          },
+          "canViewRecords": {
+            "type": "boolean"
+          },
+          "canManageRecords": {
+            "type": "boolean"
+          },
+          "canGrantConsent": {
+            "type": "boolean"
+          },
+          "legalDocumentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalDocumentNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalDocumentExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateInsuranceRequest": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planType": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberId": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isPrimary": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subscriberRelationship": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriberName": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriberDateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "subscriberSsn": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerWebsite": {
+            "type": "string",
+            "nullable": true
+          },
+          "customerServicePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "deductible": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "deductibleMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMax": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "copay": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "coinsurancePercentage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePatientRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "middleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "ssn": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "alternatePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "race": {
+            "type": "string",
+            "nullable": true
+          },
+          "ethnicity": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactRelationship": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTransferRequest": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "consentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "transferType": {
+            "type": "string",
+            "nullable": true
+          },
+          "transferMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientOrganization": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientFhirEndpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientNpi": {
+            "type": "string",
+            "nullable": true
+          },
+          "purpose": {
+            "type": "string",
+            "nullable": true
+          },
+          "includeDemographics": {
+            "type": "boolean"
+          },
+          "includeAllergies": {
+            "type": "boolean"
+          },
+          "includeConditions": {
+            "type": "boolean"
+          },
+          "includeImmunizations": {
+            "type": "boolean"
+          },
+          "includeMedications": {
+            "type": "boolean"
+          },
+          "includeEncounters": {
+            "type": "boolean"
+          },
+          "includeDocuments": {
+            "type": "boolean"
+          },
+          "includeInsurance": {
+            "type": "boolean"
+          },
+          "dataStartDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dataEndDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DashboardResponse": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "patientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryInsurance": {
+            "$ref": "#/components/schemas/InsuranceSummary"
+          },
+          "familyMemberCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "upcomingVisits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EncounterSummary"
+            },
+            "nullable": true
+          },
+          "recentDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentSummary"
+            },
+            "nullable": true
+          },
+          "unreadNotifications": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quickActions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuickAction"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentSummary": {
+        "type": "object",
+        "properties": {
+          "documentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "serviceDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EncounterSummary": {
+        "type": "object",
+        "properties": {
+          "encounterId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "encounterType": {
+            "type": "string",
+            "nullable": true
+          },
+          "providerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "plannedStartDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "facilityName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FamilyMemberDto": {
+        "type": "object",
+        "properties": {
+          "relationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "relationType": {
+            "type": "string",
+            "nullable": true
+          },
+          "isGuardian": {
+            "type": "boolean"
+          },
+          "isProxy": {
+            "type": "boolean"
+          },
+          "canViewRecords": {
+            "type": "boolean"
+          },
+          "canManageRecords": {
+            "type": "boolean"
+          },
+          "canGrantConsent": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsuranceDto": {
+        "type": "object",
+        "properties": {
+          "insuranceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planType": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberId": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isPrimary": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subscriberRelationship": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriberName": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerWebsite": {
+            "type": "string",
+            "nullable": true
+          },
+          "deductible": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "deductibleMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMax": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "copay": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "coinsurancePercentage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean"
+          },
+          "lastVerifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InsuranceSummary": {
+        "type": "object",
+        "properties": {
+          "insuranceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberId": {
+            "type": "string",
+            "nullable": true
+          },
+          "deductible": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "deductibleMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMax": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientDto": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "middleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "alternatePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "race": {
+            "type": "string",
+            "nullable": true
+          },
+          "ethnicity": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactRelationship": {
+            "type": "string",
+            "nullable": true
+          },
+          "hasSsn": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "QuickAction": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RevokeConsentRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransferAuditDto": {
+        "type": "object",
+        "properties": {
+          "auditId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "action": {
+            "type": "string",
+            "nullable": true
+          },
+          "actionDetails": {
+            "type": "string",
+            "nullable": true
+          },
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actorName": {
+            "type": "string",
+            "nullable": true
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransferDto": {
+        "type": "object",
+        "properties": {
+          "transferId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "transferType": {
+            "type": "string",
+            "nullable": true
+          },
+          "transferMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientOrganization": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "senderOrganization": {
+            "type": "string",
+            "nullable": true
+          },
+          "purpose": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "completedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "trackingNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAllergyRequest": {
+        "type": "object",
+        "properties": {
+          "allergenName": {
+            "type": "string",
+            "nullable": true
+          },
+          "allergenType": {
+            "type": "string",
+            "nullable": true
+          },
+          "severity": {
+            "type": "string",
+            "nullable": true
+          },
+          "clinicalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "reaction": {
+            "type": "string",
+            "nullable": true
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateFamilyRelationRequest": {
+        "type": "object",
+        "properties": {
+          "isGuardian": {
+            "type": "boolean"
+          },
+          "isProxy": {
+            "type": "boolean"
+          },
+          "canViewRecords": {
+            "type": "boolean"
+          },
+          "canManageRecords": {
+            "type": "boolean"
+          },
+          "canGrantConsent": {
+            "type": "boolean"
+          },
+          "legalDocumentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalDocumentNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalDocumentExpiryDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateInsuranceRequest": {
+        "type": "object",
+        "properties": {
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "planType": {
+            "type": "string",
+            "nullable": true
+          },
+          "memberId": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "payerPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "deductibleMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "outOfPocketMet": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdatePatientRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "middleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "alternatePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "race": {
+            "type": "string",
+            "nullable": true
+          },
+          "ethnicity": {
+            "type": "string",
+            "nullable": true
+          },
+          "preferredLanguage": {
+            "type": "string",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "emergencyContactRelationship": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTransferStatusRequest": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusReason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

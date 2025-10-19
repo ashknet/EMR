@@ -1,0 +1,45 @@
+2025-10-12 20:37:46.608 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-12 20:38:29.360 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-12 20:40:22.766 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-12 20:40:34.820 -05:00 [WRN] No store type was specified for the decimal property 'EstimatedCost' on entity type 'Encounter'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:40:34.827 -05:00 [WRN] No store type was specified for the decimal property 'CoinsurancePercentage' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:40:34.829 -05:00 [WRN] No store type was specified for the decimal property 'Copay' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:40:35.022 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Keyword not supported: '(localdb)\mssqllocaldb;database'.
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder.GetIndex(String keyword)
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder.set_Item(String keyword, Object value)
+   at System.Data.Common.DbConnectionStringBuilder.set_ConnectionString(String value)
+   at Microsoft.Data.SqlClient.SqlConnectionStringBuilder..ctor(String connectionString)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.<>c.<get_IsMultipleActiveResultSetsEnabled>b__7_0(String cs)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.get_IsMultipleActiveResultSetsEnabled()
+   at Microsoft.EntityFrameworkCore.SqlServer.Query.Internal.SqlServerCompiledQueryCacheKeyGenerator.GenerateCacheKey(Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ExecuteAsync[TSource,TResult](MethodInfo operatorMethodInfo, IQueryable`1 source, LambdaExpression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.EntityFinder`1.FindAsync(Object[] keyValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.FindAsync(Object[] keyValues)
+   at PatientService.API.Controllers.FamilyController.AddFamilyRelation(CreateFamilyRelationRequest request) in C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\Controllers\FamilyController.cs:line 64
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-10-12 20:43:14.167 -05:00 [WRN] Running in Development mode - Authentication is DISABLED
+2025-10-12 20:44:34.783 -05:00 [WRN] No store type was specified for the decimal property 'EstimatedCost' on entity type 'Encounter'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:44:34.788 -05:00 [WRN] No store type was specified for the decimal property 'CoinsurancePercentage' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:44:34.791 -05:00 [WRN] No store type was specified for the decimal property 'Copay' on entity type 'Insurance'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-10-12 20:49:03.243 -05:00 [WRN] Running in Development mode - Authentication is DISABLED

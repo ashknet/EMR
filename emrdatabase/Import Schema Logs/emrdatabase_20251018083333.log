@@ -1,0 +1,87 @@
+10/18/2025 3:33:33 PM	This log contains information about the import schema operation into project 'emrdatabase' on computer 'USPSCATHOTAKUR9' by user 'athotakura'.
+10/18/2025 3:33:34 PM	Import of database schema has started.
+10/18/2025 3:33:38 PM	Gathering database credentials
+10/18/2025 3:33:38 PM	Gathering database options
+10/18/2025 3:33:38 PM	Gathering generic database scoped configuration option
+10/18/2025 3:33:38 PM	Gathering users
+10/18/2025 3:33:38 PM	Gathering roles
+10/18/2025 3:33:38 PM	Gathering application roles
+10/18/2025 3:33:38 PM	Gathering role memberships
+10/18/2025 3:33:38 PM	Gathering filegroups
+10/18/2025 3:33:38 PM	Gathering full-text catalogs
+10/18/2025 3:33:38 PM	Gathering assemblies
+10/18/2025 3:33:38 PM	Gathering certificates
+10/18/2025 3:33:38 PM	Gathering asymmetric keys
+10/18/2025 3:33:38 PM	Gathering symmetric keys
+10/18/2025 3:33:38 PM	Gathering encrypted symmetric keys
+10/18/2025 3:33:38 PM	Gathering schemas
+10/18/2025 3:33:38 PM	Gathering XML schema collections
+10/18/2025 3:33:38 PM	Gathering user-defined data types
+10/18/2025 3:33:38 PM	Gathering user-defined types
+10/18/2025 3:33:38 PM	Gathering table types
+10/18/2025 3:33:38 PM	Gathering unique keys for table types
+10/18/2025 3:33:38 PM	Gathering primary keys for table types
+10/18/2025 3:33:38 PM	Gathering indexes for table types
+10/18/2025 3:33:38 PM	Gathering check constraints for table types
+10/18/2025 3:33:38 PM	Gathering default constraints for table types
+10/18/2025 3:33:38 PM	Gathering partition functions
+10/18/2025 3:33:38 PM	Gathering partition schemes
+10/18/2025 3:33:38 PM	Gathering functions
+10/18/2025 3:33:38 PM	Gathering encrypted functions
+10/18/2025 3:33:38 PM	Gathering aggregates
+10/18/2025 3:33:38 PM	Gathering procedures
+10/18/2025 3:33:38 PM	Gathering encrypted procedures
+10/18/2025 3:33:38 PM	Gathering tables
+10/18/2025 3:33:39 PM	Gathering primary keys
+10/18/2025 3:33:39 PM	Gathering unique constraints
+10/18/2025 3:33:39 PM	Gathering foreign keys
+10/18/2025 3:33:39 PM	Gathering default constraints
+10/18/2025 3:33:39 PM	Gathering check constraints
+10/18/2025 3:33:39 PM	Gathering views
+10/18/2025 3:33:39 PM	Gathering encrypted views
+10/18/2025 3:33:39 PM	Gathering indexes
+10/18/2025 3:33:39 PM	Gathering statistics
+10/18/2025 3:33:39 PM	Gathering full-text index stoplists
+10/18/2025 3:33:39 PM	Gathering search property lists
+10/18/2025 3:33:39 PM	Gathering search properties
+10/18/2025 3:33:39 PM	Gathering full-text indexes
+10/18/2025 3:33:39 PM	Gathering column store indexes
+10/18/2025 3:33:39 PM	Gathering spatial indexes
+10/18/2025 3:33:39 PM	Gathering XML indexes
+10/18/2025 3:33:39 PM	Gathering Selective XML indexes
+10/18/2025 3:33:39 PM	Gathering encrypted triggers
+10/18/2025 3:33:39 PM	Gathering triggers
+10/18/2025 3:33:39 PM	Gathering encrypted and clr ddl triggers
+10/18/2025 3:33:39 PM	Gathering ddl triggers
+10/18/2025 3:33:39 PM	Creating edge constraints
+10/18/2025 3:33:39 PM	Gathering synonyms
+10/18/2025 3:33:39 PM	Gathering defaults
+10/18/2025 3:33:39 PM	Gathering data constraint uddt bindings
+10/18/2025 3:33:39 PM	Gathering rules
+10/18/2025 3:33:39 PM	Gathering data constraint uddt bindings
+10/18/2025 3:33:39 PM	Gathering message types
+10/18/2025 3:33:39 PM	Gathering queues
+10/18/2025 3:33:39 PM	Gathering contracts
+10/18/2025 3:33:39 PM	Gathering services
+10/18/2025 3:33:39 PM	Gathering event notifications
+10/18/2025 3:33:39 PM	Gathering remote service bindings
+10/18/2025 3:33:39 PM	Gathering broker priorities
+10/18/2025 3:33:39 PM	Gathering signatures
+10/18/2025 3:33:39 PM	Gathering compression options
+10/18/2025 3:33:39 PM	Gathering sequence types
+10/18/2025 3:33:39 PM	Gathering security policies
+10/18/2025 3:33:39 PM	Gather column encryption keys
+10/18/2025 3:33:39 PM	Gathering column master keys
+10/18/2025 3:33:39 PM	Gathering external data sources
+10/18/2025 3:33:39 PM	Gathering external file formats
+10/18/2025 3:33:39 PM	Gathering external tables
+10/18/2025 3:33:39 PM	Gathering extended properties
+10/18/2025 3:33:39 PM	Gathering assemblies
+10/18/2025 3:33:39 PM	Gathering credentials
+10/18/2025 3:33:39 PM	Gathering logins
+10/18/2025 3:33:39 PM	Gathering server audits
+10/18/2025 3:33:39 PM	Scanning project for duplicate elements
+10/18/2025 3:33:40 PM	Finished duplicate element processing
+10/18/2025 3:33:40 PM	Finished importing database.
+10/18/2025 3:33:40 PM	A summary of the import was saved to the following location: C:\Ashok\My Projects\EMRR\emrdatabase\Import Schema Logs\emrdatabase_20251018083333.log
+10/18/2025 3:33:40 PM	Click Finish to continue...
