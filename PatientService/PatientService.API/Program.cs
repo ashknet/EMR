@@ -80,17 +80,17 @@ builder.Services.AddDbContext<PatientDbContext>(options =>
 // Configure Authentication - Conditional for Development
 var isDevelopment = builder.Environment.IsDevelopment();
 
-if (!isDevelopment)
-{
-    // Production: Use Azure AD authentication
-    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
-}
-else
-{
+//if (!isDevelopment)
+//{
+//    // Production: Use Azure AD authentication
+//    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//        .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
+//}
+//else
+//{
     // Development: No authentication required
     Log.Warning("Running in Development mode - Authentication is DISABLED");
-}
+//}
 
 builder.Services.AddAuthorization(options =>
 {
@@ -133,24 +133,24 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Patient Service API v1");
         c.RoutePrefix = "swagger";
     });
-}
+//}
 
 app.UseHttpsRedirection();
 
 app.UseCors("AllowPatientPortal");
 
-if (!isDevelopment)
-{
-    app.UseAuthentication();
-}
+//if (!isDevelopment)
+//{
+//    app.UseAuthentication();
+//}
 
 app.UseAuthorization();
 
