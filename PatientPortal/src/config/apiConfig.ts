@@ -1,7 +1,12 @@
 import axios from 'axios';
 import { msalInstance } from './authConfig';
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://localhost:58069/api';
+// Use Azure deployed API in production, localhost in development
+const defaultApiUrl = import.meta.env.PROD 
+  ? 'https://emrrapi.azurewebsites.net/api'
+  : 'https://localhost:58069/api';
+
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || defaultApiUrl;
 
 // Create axios instance
 export const apiClient = axios.create({
@@ -71,7 +76,12 @@ apiClient.interceptors.response.use(
 
 export default apiClient;
 
-export const API_BASE = import.meta.env.VITE_API_URL || 'https://localhost:58069';
+// Use Azure deployed API in production, localhost in development
+const defaultApiBase = import.meta.env.PROD
+  ? 'https://emrrapi.azurewebsites.net'
+  : 'https://localhost:58069';
+
+export const API_BASE = import.meta.env.VITE_API_URL || defaultApiBase;
 
 export const getMetadata = async (table: string) => {
   const res = await fetch(`${API_BASE}/api/metadata/${table}`);

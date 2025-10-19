@@ -1,0 +1,14 @@
+{
+  "buildCommand": "cd PatientPortal && npm install && npm run build",
+  "outputDirectory": "PatientPortal/dist",
+  "devCommand": "cd PatientPortal && npm run dev",
+  "installCommand": "cd PatientPortal && npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
