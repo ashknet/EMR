@@ -5,12 +5,12 @@
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS5OxiRi9fkCHvXj7UTWc2wAAAAACAAAAAAADZgAAwAAAABAAAACuAazLWI4llqb6xHrxWUGvAAAAAASAAACgAAAAEAAAABgwj295hqbaPtJ9fS59y7eAAAAAB56b5ZKLyMzqnOnl9a8u28bWPlbTsB3axkgiV6QFj3iwvC7s2z7H/zcXqLPQf3KKkf3VxihmflVdxk3ZTuDBAQ98Jpirt7K8HvTjcJuOpVEUWmqzawGHk3iRupVmJVx0dDD8haj9MAt5FjF70ucSemLFls+/7C73JwsGuMp+jmEUAAAAb6ouXRzOP++A++psEvAnljqME54=</EncryptedPassword>
     <_PublishTargetUrl>ftps://waws-prod-blu-017.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
-    <History>True|2025-10-19T12:44:24.1718279Z||;</History>
+    <History>True|2025-10-19T13:30:48.4538233Z||;False|2025-10-19T08:29:31.7679634-05:00||;True|2025-10-19T07:44:24.1718279-05:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.json">
-      <publishTime>10/19/2025 07:37:40</publishTime>
+      <publishTime>10/19/2025 08:17:55</publishTime>
     </File>
     <File Include="AutoMapper.dll">
       <publishTime>01/16/2023 09:41:56</publishTime>
@@ -184,16 +184,16 @@
       <publishTime>03/08/2023 01:09:54</publishTime>
     </File>
     <File Include="PatientService.API.deps.json">
-      <publishTime>10/19/2025 07:42:27</publishTime>
+      <publishTime>10/19/2025 08:30:35</publishTime>
     </File>
     <File Include="PatientService.API.dll">
-      <publishTime>10/19/2025 07:42:22</publishTime>
+      <publishTime>10/19/2025 08:30:34</publishTime>
     </File>
     <File Include="PatientService.API.exe">
-      <publishTime>10/19/2025 07:42:22</publishTime>
+      <publishTime>10/19/2025 08:30:34</publishTime>
     </File>
     <File Include="PatientService.API.pdb">
-      <publishTime>10/19/2025 07:42:22</publishTime>
+      <publishTime>10/19/2025 08:30:34</publishTime>
     </File>
     <File Include="PatientService.API.runtimeconfig.json">
       <publishTime>10/19/2025 07:42:23</publishTime>
@@ -337,7 +337,7 @@
       <publishTime>10/22/2021 18:49:44</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>10/19/2025 07:42:27</publishTime>
+      <publishTime>10/19/2025 08:30:35</publishTime>
     </File>
   </ItemGroup>
 </Project>
