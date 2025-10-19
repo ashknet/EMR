@@ -18,8 +18,18 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
-    target: 'es2022'
+    sourcemap: false,
+    target: 'es2022',
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@azure/msal-browser', '@azure/msal-react']
+        }
+      }
+    }
   },
   css: {
     postcss: './postcss.config.js',
