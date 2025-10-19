@@ -115,7 +115,8 @@ builder.Services.AddCors(options =>
             builder.Configuration["AllowedOrigins:PatientPortal"] ?? "http://localhost:5173",
             "https://localhost:5173",
             "http://localhost:5174",
-            "https://localhost:5174"
+            "https://localhost:5174",
+            "https://emr-sage.vercel.app"
         )
         .AllowAnyHeader()
         .AllowAnyMethod()
