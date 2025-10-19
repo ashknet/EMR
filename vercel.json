@@ -1,14 +1,16 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "PatientPortal/dist",
-  "installCommand": "npm install --legacy-peer-deps",
+  "installCommand": "npm run install",
   "framework": "vite",
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "CI": "true"
   },
   "build": {
     "env": {
-      "NODE_ENV": "production"
+      "NODE_ENV": "production",
+      "CI": "true"
     }
   },
   "rewrites": [

@@ -1,0 +1,28 @@
+# Ignore everything except PatientPortal
+*
+!PatientPortal/
+!package.json
+!vercel.json
+!README.md
+
+# Ignore development files
+**/node_modules/
+**/.git/
+**/dist/
+**/build/
+**/*.log
+**/.env*
+**/coverage/
+**/test/
+**/tests/
+**/__tests__/
+**/*.test.*
+**/*.spec.*
+
+# Ignore other services
+HospitalAgent/
+HospitalAgentService/
+PatientService/
+SampleApp/
+database/
+emrdatabase/

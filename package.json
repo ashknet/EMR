@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "EMR Monorepo with PatientPortal frontend",
   "private": true,
-  "workspaces": [
-    "PatientPortal"
-  ],
   "scripts": {
-    "build": "npm run build --workspace=PatientPortal",
-    "install": "npm install --workspace=PatientPortal",
-    "dev": "npm run dev --workspace=PatientPortal"
+    "build": "cd PatientPortal && npm run build",
+    "install": "cd PatientPortal && npm install --legacy-peer-deps",
+    "dev": "cd PatientPortal && npm run dev"
   },
   "engines": {
     "node": ">=18.0.0"
