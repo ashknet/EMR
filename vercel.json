@@ -1,16 +1,14 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd PatientPortal && npm run build",
   "outputDirectory": "PatientPortal/dist",
-  "installCommand": "npm run install",
+  "installCommand": "cd PatientPortal && npm ci",
   "framework": "vite",
   "env": {
-    "NODE_ENV": "production",
-    "CI": "true"
+    "NODE_ENV": "production"
   },
   "build": {
     "env": {
-      "NODE_ENV": "production",
-      "CI": "true"
+      "NODE_ENV": "production"
     }
   },
   "rewrites": [
