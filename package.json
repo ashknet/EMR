@@ -1,0 +1,17 @@
+{
+  "name": "emr-monorepo",
+  "version": "1.0.0",
+  "description": "EMR Monorepo with PatientPortal frontend",
+  "private": true,
+  "workspaces": [
+    "PatientPortal"
+  ],
+  "scripts": {
+    "build": "cd PatientPortal && npm run build",
+    "install": "cd PatientPortal && npm install",
+    "dev": "cd PatientPortal && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
