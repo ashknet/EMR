@@ -12,14 +12,14 @@ public class PatientIntakeDto
     public List<PhoneDto> Phones { get; set; } = new();
     public List<EmergencyContactDto> EmergencyContacts { get; set; } = new();
     public List<InsurancePolicyDto> InsurancePolicies { get; set; } = new();
-    public SocialHistoryDto? SocialHistory { get; set; }
+    public SocialHistoryRecordDto? SocialHistory { get; set; }
     public LegalConsentDto? LegalConsents { get; set; }
-    public List<AllergyDto> Allergies { get; set; } = new();
-    public List<MedicationDto> Medications { get; set; } = new();
+    public List<AllergyRecordDto> Allergies { get; set; } = new();
+    public List<MedicationRecordDto> Medications { get; set; } = new();
     public List<Guid> ChronicConditionIds { get; set; } = new();
-    public List<SurgeryDto> Surgeries { get; set; } = new();
-    public List<HospitalizationDto> Hospitalizations { get; set; } = new();
-    public List<FamilyHistoryDto> FamilyMedicalHistory { get; set; } = new();
+    public List<SurgeryRecordDto> Surgeries { get; set; } = new();
+    public List<HospitalizationRecordDto> Hospitalizations { get; set; } = new();
+    public List<FamilyHistoryRecordDto> FamilyMedicalHistory { get; set; } = new();
 }
 
 /// <summary>
@@ -75,12 +75,12 @@ public record AddressDto(int AddressTypeId, string Line1, string? Line2, string?
 public record PhoneDto(int PhoneTypeId, string PhoneNumber);
 public record EmergencyContactDto(string Name, int RelationshipTypeId, string Phone, string? AltPhone);
 public record InsurancePolicyDto(int ProviderId, string? GroupNumber, string? PolicyNumber, string? PolicyHolderName, string? ProviderPhone, string? MedicareMedicaidId, string? CardImagePath);
-public record SocialHistoryDto(int? SmokingStatusId, int? AlcoholUseId, int? DrugUseId, string? Occupation, int? LivingSituationId);
+public record SocialHistoryRecordDto(int? SmokingStatusId, int? AlcoholUseId, int? DrugUseId, string? Occupation, int? LivingSituationId);
 public record LegalConsentDto(bool HipaaAgreed, bool ConsentToTreat, bool AdvanceDirectives, string? AdvanceDirectivesPath, bool AssignmentOfBenefits, bool FinancialResponsibility, DateTime? SignedOnUtc, string? SignaturePath);
-public record AllergyDto(string AllergenName, string AllergenType, string Severity, string? Reaction, DateTime? OnsetDate);
-public record MedicationDto(string MedicationName, string? Dosage, string? Frequency, string? Prescriber, DateTime? StartDate);
-public record ChronicConditionDto(string ConditionName, DateTime? DiagnosedDate, string? Status, string? Notes);
-public record ImmunizationDto(string VaccineName, DateTime AdministeredDate, int? DoseNumber, string? Provider, string? LotNumber, DateTime? ExpirationDate, string? Site, string? Route, string? Notes);
-public record SurgeryDto(string SurgeryType, DateTime? SurgeryDate, string? Notes);
-public record HospitalizationDto(string? HospitalName, string? Reason, DateTime? AdmissionDate, DateTime? DischargeDate, string? Notes);
-public record FamilyHistoryDto(string Relative, string Condition, string? Notes);
+public record AllergyRecordDto(string AllergenName, string AllergenType, string Severity, string? Reaction, DateTime? OnsetDate);
+public record MedicationRecordDto(string MedicationName, string? Dosage, string? Frequency, string? Prescriber, DateTime? StartDate);
+public record ChronicConditionRecordDto(string ConditionName, DateTime? DiagnosedDate, string? Status, string? Notes);
+public record ImmunizationRecordDto(string VaccineName, DateTime AdministeredDate, int? DoseNumber, string? Provider, string? LotNumber, DateTime? ExpirationDate, string? Site, string? Route, string? Notes);
+public record SurgeryRecordDto(string SurgeryType, DateTime? SurgeryDate, string? Notes);
+public record HospitalizationRecordDto(string? HospitalName, string? Reason, DateTime? AdmissionDate, DateTime? DischargeDate, string? Notes);
+public record FamilyHistoryRecordDto(string Relative, string Condition, string? Notes);

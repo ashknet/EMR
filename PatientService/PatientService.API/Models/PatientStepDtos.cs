@@ -90,7 +90,7 @@ namespace PatientService.API.Models
         [Required]
         public Guid PatientId { get; set; }
         
-        public List<AllergyDto>? Allergies { get; set; }
+        public List<AllergyRecordDto>? Allergies { get; set; }
     }
 
     // Step 7 - Medications, Chronic Conditions & Immunizations
@@ -99,9 +99,9 @@ namespace PatientService.API.Models
         [Required]
         public Guid PatientId { get; set; }
         
-        public List<MedicationDto>? Medications { get; set; }
-        public List<ChronicConditionDto>? ChronicConditions { get; set; }
-        public List<ImmunizationDto>? Immunizations { get; set; }
+        public List<MedicationRecordDto>? Medications { get; set; }
+        public List<ChronicConditionRecordDto>? ChronicConditions { get; set; }
+        public List<ImmunizationRecordDto>? Immunizations { get; set; }
     }
 
     // Step 8 - Medical History (Complete)
@@ -110,13 +110,13 @@ namespace PatientService.API.Models
         [Required]
         public Guid PatientId { get; set; }
         
-        public List<AllergyDto>? Allergies { get; set; }
-        public List<MedicationDto>? Medications { get; set; }
-        public List<ChronicConditionDto>? ChronicConditions { get; set; }
-        public List<ImmunizationDto>? Immunizations { get; set; }
-        public List<SurgeryDto>? Surgeries { get; set; }
-        public List<HospitalizationDto>? Hospitalizations { get; set; }
-        public List<FamilyHistoryDto>? FamilyMedicalHistory { get; set; }
+        public List<AllergyRecordDto>? Allergies { get; set; }
+        public List<MedicationRecordDto>? Medications { get; set; }
+        public List<ChronicConditionRecordDto>? ChronicConditions { get; set; }
+        public List<ImmunizationRecordDto>? Immunizations { get; set; }
+        public List<SurgeryRecordDto>? Surgeries { get; set; }
+        public List<HospitalizationRecordDto>? Hospitalizations { get; set; }
+        public List<FamilyHistoryRecordDto>? FamilyMedicalHistory { get; set; }
     }
 
     // Step 9 - Insurance

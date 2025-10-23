@@ -6,6 +6,20 @@ import { msalInstance } from './config/authConfig';
 import App from './App';
 import './index.css';
 
+// Initialize MSAL and handle redirects
+msalInstance.initialize().then(() => {
+  // Handle redirect promise
+  msalInstance.handleRedirectPromise().then((response) => {
+    if (response) {
+      console.log('Authentication successful:', response);
+      // Redirect to dashboard after successful authentication
+      window.location.href = '/dashboard';
+    }
+  }).catch((error) => {
+    console.error('Authentication error:', error);
+  });
+});
+
 // Create a React Query client
 const queryClient = new QueryClient({
   defaultOptions: {

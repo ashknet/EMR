@@ -1,7 +1,7 @@
 {
   "buildCommand": "cd PatientPortal && npm run build",
   "outputDirectory": "PatientPortal/dist",
-  "installCommand": "cd PatientPortal && npm ci",
+  "installCommand": "cd PatientPortal && npm install --legacy-peer-deps --production=false",
   "framework": "vite",
   "env": {
     "NODE_ENV": "production"

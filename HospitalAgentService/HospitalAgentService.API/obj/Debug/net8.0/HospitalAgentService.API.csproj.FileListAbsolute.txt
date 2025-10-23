@@ -158,3 +158,5 @@ C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\bin\Debu
 C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\bin\Debug\net8.0\System.ClientModel.dll
+C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\obj\Debug\net8.0\HospitalAgentService.API.sourcelink.json
+C:\Ashok\My Projects\EMRR\HospitalAgentService\HospitalAgentService.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

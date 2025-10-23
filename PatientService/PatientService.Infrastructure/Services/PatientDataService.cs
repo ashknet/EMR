@@ -191,7 +191,7 @@ public class PatientDataService : IPatientDataService
         // Second result set: Primary insurance
         if (await reader.NextResultAsync() && await reader.ReadAsync())
         {
-            result.PrimaryInsurance = new InsuranceSummary
+            result.PrimaryInsurance = new InsurancePolicySummary
             {
                 InsuranceId = reader.GetGuid(reader.GetOrdinal("InsuranceId")),
                 PayerName = reader.GetString(reader.GetOrdinal("PayerName")),
@@ -485,14 +485,14 @@ public class DashboardSummaryResult
     public string PatientName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string PhoneNumber { get; set; } = string.Empty;
-    public InsuranceSummary? PrimaryInsurance { get; set; }
+    public InsurancePolicySummary? PrimaryInsurance { get; set; }
     public int FamilyMemberCount { get; set; }
     public int AllergyCount { get; set; }
     public int MedicationCount { get; set; }
     public int DocumentCount { get; set; }
 }
 
-public class InsuranceSummary
+public class InsurancePolicySummary
 {
     public Guid InsuranceId { get; set; }
     public string PayerName { get; set; } = string.Empty;

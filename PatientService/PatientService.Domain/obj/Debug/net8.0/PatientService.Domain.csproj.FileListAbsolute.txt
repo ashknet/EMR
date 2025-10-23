@@ -10,3 +10,4 @@ C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\refint\PatientService.Domain.dll
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.pdb
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\ref\PatientService.Domain.dll
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.Domain\obj\Debug\net8.0\PatientService.Domain.sourcelink.json

@@ -1,5 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
+import TestModeToggle from './components/TestModeToggle';
+import DebugInfo from './components/DebugInfo';
+import LandingPage from './pages/LandingPage';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import PatientIntakeForm from './pages/PatientIntakeForm';
 import ComprehensiveIntake from './pages/ComprehensiveIntake';
 import AdminMetadata from './pages/AdminMetadata';
@@ -18,8 +24,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        {/* Public Routes */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/intake" element={<PatientIntakeForm />} />
@@ -34,7 +45,16 @@ function App() {
           <Route path="/transfers" element={<Transfers />} />
           <Route path="/admin/metadata" element={<AdminMetadata />} />
         </Route>
+        
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      
+      {/* Test Mode Toggle - Available on all pages */}
+      <TestModeToggle />
+      
+      {/* Debug Info - Available in test mode */}
+      <DebugInfo />
     </BrowserRouter>
   );
 }

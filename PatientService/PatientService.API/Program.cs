@@ -38,6 +38,14 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 
+    // Include XML comments if available
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
+    {
+        c.IncludeXmlComments(xmlPath);
+    }
+
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
@@ -62,12 +70,23 @@ builder.Services.AddSwaggerGen(c =>
             Array.Empty<string>()
         }
     });
+
+    // Ignore obsolete properties to prevent Swagger generation errors
+    c.IgnoreObsoleteProperties();
+    c.IgnoreObsoleteActions();
 });
 
 // Configure Database
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+if (string.IsNullOrEmpty(connectionString))
+{
+    Log.Error("Database connection string is not configured");
+    throw new InvalidOperationException("Database connection string is required");
+}
+
 builder.Services.AddDbContext<PatientDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    options.UseSqlServer(connectionString,
         sqlOptions =>
         {
             sqlOptions.EnableRetryOnFailure(
@@ -75,6 +94,13 @@ builder.Services.AddDbContext<PatientDbContext>(options =>
                 maxRetryDelay: TimeSpan.FromSeconds(30),
                 errorNumbersToAdd: null);
         });
+    
+    // Enable sensitive data logging in development
+    if (builder.Environment.IsDevelopment())
+    {
+        options.EnableSensitiveDataLogging();
+        options.EnableDetailedErrors();
+    }
 });
 
 // Configure Authentication - Conditional for Development
@@ -98,10 +124,19 @@ builder.Services.AddAuthorization(options =>
 });
 
 // Register application services
-var keyVaultUri = builder.Configuration["AzureKeyVault:VaultUri"] 
-    ?? throw new InvalidOperationException("Azure Key Vault URI not configured");
+var keyVaultUri = builder.Configuration["AzureKeyVault:VaultUri"];
 
-builder.Services.AddSingleton<IEncryptionService>(sp => new EncryptionService(keyVaultUri));
+// Only register encryption service if Key Vault is configured
+if (!string.IsNullOrEmpty(keyVaultUri))
+{
+    builder.Services.AddSingleton<IEncryptionService>(sp => new EncryptionService(keyVaultUri));
+}
+else
+{
+    // Development fallback - use a mock encryption service
+    Log.Warning("Azure Key Vault not configured - using mock encryption service for development");
+    builder.Services.AddSingleton<IEncryptionService>(sp => new MockEncryptionService());
+}
 builder.Services.AddScoped<IFhirService, FhirService>();
 builder.Services.AddScoped<IPatientDataService, PatientDataService>(); // ADO.NET for high-performance operations
 builder.Services.AddAutoMapper(typeof(Program));

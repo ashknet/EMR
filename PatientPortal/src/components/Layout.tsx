@@ -2,26 +2,63 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { useMsal } from '@azure/msal-react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { isDevelopmentMode } from '../config/authConfig';
+import { isDevelopmentMode, ENABLE_HARDCODED_USER, HARDCODED_USER } from '../config/authConfig';
 import { MOCK_PATIENT_ID } from '../config/mockUser';
 import { API_BASE_URL } from '../config/apiConfig';
+import ApiStatus from './ApiStatus';
 
 export default function Layout() {
   const { instance, accounts } = useMsal();
   
+  // Get current user ID based on authentication mode
+  const getCurrentUserId = () => {
+    if (ENABLE_HARDCODED_USER) {
+      return HARDCODED_USER.id;
+    }
+    if (isDevelopmentMode) {
+      return MOCK_PATIENT_ID;
+    }
+    // In production, use the authenticated user's ID
+    return accounts[0]?.localAccountId || accounts[0]?.homeAccountId;
+  };
+
+  const currentUserId = getCurrentUserId();
+  
   // Fetch patient data from database
-  const { data: patientData } = useQuery({
-    queryKey: ['currentUser', MOCK_PATIENT_ID],
+  const { data: patientData, isLoading: isLoadingUser, error: userDataError } = useQuery({
+    queryKey: ['currentUser', currentUserId],
     queryFn: async () => {
-      const response = await axios.get(`${API_BASE_URL}/patients/${MOCK_PATIENT_ID}`);
-      return response.data;
+      try {
+        const response = await axios.get(`${API_BASE_URL}/patients/${currentUserId}`);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        // Return fallback data if API call fails
+        if (ENABLE_HARDCODED_USER) {
+          return {
+            firstName: HARDCODED_USER.firstName,
+            lastName: HARDCODED_USER.lastName,
+            email: HARDCODED_USER.email,
+          };
+        }
+        return {
+          firstName: accounts[0]?.name?.split(' ')[0] || 'User',
+          lastName: accounts[0]?.name?.split(' ').slice(1).join(' ') || '',
+          email: accounts[0]?.username || '',
+        };
+      }
     },
-    enabled: isDevelopmentMode, // Only fetch in development mode
+    enabled: !!currentUserId, // Only fetch if we have a user ID
+    retry: 1, // Only retry once on failure
   });
 
-  const userName = isDevelopmentMode 
-    ? (patientData ? `${patientData.firstName} ${patientData.lastName}` : 'Loading...') 
-    : (accounts[0]?.name || 'User');
+  const userName = ENABLE_HARDCODED_USER 
+    ? `${HARDCODED_USER.firstName} ${HARDCODED_USER.lastName}`
+    : isLoadingUser 
+      ? 'Loading...'
+      : patientData 
+        ? `${patientData.firstName || ''} ${patientData.lastName || ''}`.trim() || 'User'
+        : (accounts[0]?.name || 'User');
 
   const handleLogout = () => {
     instance.logoutRedirect();
@@ -73,7 +110,7 @@ export default function Layout() {
                   {userName}
                 </span>
               </div>
-              {!isDevelopmentMode && (
+              {!ENABLE_HARDCODED_USER && !isDevelopmentMode && (
                 <button
                   onClick={handleLogout}
                   className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
@@ -81,6 +118,14 @@ export default function Layout() {
                 >
                   Sign Out
                 </button>
+              )}
+              {ENABLE_HARDCODED_USER && (
+                <div className="flex items-center gap-3">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-xl text-sm font-semibold">
+                    🧪 Test Mode
+                  </div>
+                  <ApiStatus />
+                </div>
               )}
             </div>
           </div>

@@ -28,37 +28,37 @@ public class MappingProfile : Profile
         CreateMap<InsurancePolicy, InsurancePolicyDto>();
 
         // Social History & Legal Consents
-        CreateMap<SocialHistoryDto, SocialHistory>().ReverseMap();
+        CreateMap<SocialHistoryRecordDto, SocialHistory>().ReverseMap();
         CreateMap<LegalConsentDto, LegalConsent>().ReverseMap();
 
         // Allergies
-        CreateMap<AllergyDto, Allergy>()
+        CreateMap<AllergyRecordDto, Allergy>()
             .ForMember(dest => dest.AllergyId, opt => opt.Ignore())
             .ForMember(dest => dest.PatientId, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => "Patient"));
 
         // Medications
-        CreateMap<MedicationDto, Medication>()
+        CreateMap<MedicationRecordDto, Medication>()
             .ForMember(dest => dest.MedicationId, opt => opt.Ignore())
             .ForMember(dest => dest.PatientId, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedBy, opt => opt.MapFrom(src => "Patient"));
 
         // Surgeries
-        CreateMap<SurgeryDto, PatientSurgery>()
+        CreateMap<SurgeryRecordDto, PatientSurgery>()
             .ForMember(dest => dest.SurgeryId, opt => opt.Ignore())
             .ForMember(dest => dest.PatientId, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());
 
         // Hospitalizations
-        CreateMap<HospitalizationDto, PatientHospitalization>()
+        CreateMap<HospitalizationRecordDto, PatientHospitalization>()
             .ForMember(dest => dest.HospitalizationId, opt => opt.Ignore())
             .ForMember(dest => dest.PatientId, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());
 
         // Family Medical History
-        CreateMap<FamilyHistoryDto, FamilyMedicalHistory>()
+        CreateMap<FamilyHistoryRecordDto, FamilyMedicalHistory>()
             .ForMember(dest => dest.FamilyHistoryId, opt => opt.Ignore())
             .ForMember(dest => dest.PatientId, opt => opt.Ignore())
             .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());

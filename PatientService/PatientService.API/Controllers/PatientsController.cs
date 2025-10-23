@@ -147,7 +147,7 @@ public class PatientsController : ControllerBase
                     PatientId = patient.PatientId,
                     Allergies = await _context.Allergies
                         .Where(a => a.PatientId == id)
-                        .Select(a => new Models.AllergyDto(
+                        .Select(a => new Models.AllergyRecordDto(
                             a.AllergenName,
                             a.AllergenType,
                             a.Severity,
@@ -160,7 +160,7 @@ public class PatientsController : ControllerBase
                     PatientId = patient.PatientId,
                     Medications = await _context.Medications
                         .Where(m => m.PatientId == id)
-                        .Select(m => new Models.MedicationDto(
+                        .Select(m => new Models.MedicationRecordDto(
                             m.MedicationName,
                             m.Dosage,
                             m.Frequency,
@@ -173,7 +173,7 @@ public class PatientsController : ControllerBase
                     PatientId = patient.PatientId,
                     Allergies = await _context.Allergies
                         .Where(a => a.PatientId == id)
-                        .Select(a => new Models.AllergyDto(
+                        .Select(a => new Models.AllergyRecordDto(
                             a.AllergenName,
                             a.AllergenType,
                             a.Severity,
@@ -182,7 +182,7 @@ public class PatientsController : ControllerBase
                         )).ToListAsync(),
                     Medications = await _context.Medications
                         .Where(m => m.PatientId == id)
-                        .Select(m => new Models.MedicationDto(
+                        .Select(m => new Models.MedicationRecordDto(
                             m.MedicationName,
                             m.Dosage,
                             m.Frequency,
@@ -191,7 +191,7 @@ public class PatientsController : ControllerBase
                         )).ToListAsync(),
                     ChronicConditions = await _context.ChronicConditions
                         .Where(c => c.PatientId == id)
-                        .Select(c => new Models.ChronicConditionDto(
+                        .Select(c => new Models.ChronicConditionRecordDto(
                             c.ConditionName,
                             c.DiagnosedDate,
                             c.Status,
@@ -199,7 +199,7 @@ public class PatientsController : ControllerBase
                         )).ToListAsync(),
                     Immunizations = await _context.Immunizations
                         .Where(i => i.PatientId == id)
-                        .Select(i => new Models.ImmunizationDto(
+                        .Select(i => new Models.ImmunizationRecordDto(
                             i.VaccineName,
                             i.AdministeredDate,
                             i.DoseNumber,
@@ -212,14 +212,14 @@ public class PatientsController : ControllerBase
                         )).ToListAsync(),
                     Surgeries = await _context.PatientSurgeries
                         .Where(s => s.PatientId == id)
-                        .Select(s => new Models.SurgeryDto(
+                        .Select(s => new Models.SurgeryRecordDto(
                             s.SurgeryType,
                             s.SurgeryDate,
                             s.Notes
                         )).ToListAsync(),
                     Hospitalizations = await _context.PatientHospitalizations
                         .Where(h => h.PatientId == id)
-                        .Select(h => new Models.HospitalizationDto(
+                        .Select(h => new Models.HospitalizationRecordDto(
                             h.HospitalName,
                             h.Reason,
                             h.AdmissionDate,
@@ -228,7 +228,7 @@ public class PatientsController : ControllerBase
                         )).ToListAsync(),
                     FamilyMedicalHistory = await _context.FamilyMedicalHistories
                         .Where(f => f.PatientId == id)
-                        .Select(f => new Models.FamilyHistoryDto(
+                        .Select(f => new Models.FamilyHistoryRecordDto(
                             f.Relative,
                             f.Condition,
                             f.Notes

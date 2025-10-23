@@ -195,3 +195,4 @@ C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\obj\Debug\net8.0\Pat
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\obj\Debug\net8.0\PatientService.API.genruntimeconfig.cache
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\obj\Debug\net8.0\ref\PatientService.API.dll
 C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Ashok\My Projects\EMRR\PatientService\PatientService.API\obj\Debug\net8.0\PatientService.API.sourcelink.json
